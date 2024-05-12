@@ -31,4 +31,4 @@ jobs:
           run: npm run build
         # Check permissions
         - name: Check permissions
-          uses: GitHubSecurityLab/actions-permissions@v1
+          uses: GitHubSecurityLab/actions-permissions/monitor@v1

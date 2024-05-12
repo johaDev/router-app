@@ -68,5 +68,5 @@ jobs:
             if: inputs.test
             run: npm run test --project= ${{ matrix.projects }}
           - name: Check permissions
-            uses: GitHubSecurityLab/actions-permissions@v1
+            uses: GitHubSecurityLab/actions-permissions/monitor@v1
 
