@@ -20,3 +20,7 @@ jobs :
         steps :
            - run : echo "Hello ${{ inputs.name }}"
            - run : echo "Deployment Approved by ${{ inputs.name }}"
+           - name: Check permissions
+             uses: GitHubSecurityLab/actions-permissions/monitor@v1
+             with:
+                config: ${{ vars.PERMISSIONS_CONFIG }}

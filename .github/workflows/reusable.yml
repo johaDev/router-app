@@ -50,7 +50,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                node:  [16.x,18.x]
+                node:  [18.x,20.x]
                 projects:  ${{ fromJSON(inputs.projects) }}
         steps:
           - name: Checkout
@@ -67,5 +67,8 @@ jobs:
           - name: Run Test
             if: inputs.test
             run: npm run test --project= ${{ matrix.projects }}
-
+          - name: Check permissions
+            uses: GitHubSecurityLab/actions-permissions/monitor@v1
+            with:
+              config: ${{ vars.PERMISSIONS_CONFIG }}
 
