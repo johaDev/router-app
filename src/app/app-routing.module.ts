@@ -69,13 +69,15 @@ export const routes: Routes = [
     path: 'employee',
     loadChildren: () => import('./employee/employee.module'),
     providers: [LocalRouteService],
-    title: 'Employee'
+    title: 'Employee',
     // canMatch: [authGuard],
+    data: {  reuse: true },
   },
   {
     path: 'user',
     data: {
       preload: true,
+      reuse: true,
     },
     loadComponent: () => import('./user/user.component'),
     // providers: [LocalRouteService]

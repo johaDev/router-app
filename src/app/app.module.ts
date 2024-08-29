@@ -94,10 +94,10 @@ export class PreloadingStrategyService implements PreloadingStrategy {
       // withComponentInputBinding(),
       // withViewTransitions()
     ),
-    // {
-    //   provide: RouteReuseStrategy,
-    //   useClass: ReuseRouter,
-    // },
+    {
+       provide: RouteReuseStrategy,
+       useClass: ReuseRouter,
+    },
     // {
     //   provide: TitleStrategy,
     //   useClass: TitleService,
